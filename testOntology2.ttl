@@ -1,0 +1,396 @@
+@prefix comic: <http://comicCharacters.com/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dbp: <http://dbpedia.org/property/> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+comic:Marvel_Comics a comic:Publisher ;
+    rdfs:label "Marvel Comics"@en ;
+    comic:publisherName "Marvel Comics"@en ;
+    rdfs:comment "A rescource describing Marvel comics." ;
+    owl:sameAs dbr:Marvel_Comics .
+
+comic:allDifferent a owl:AllDifferent ;
+    owl:distinctMembers comic:Alien,
+        comic:Animal,
+        comic:Arthrosian,
+        comic:Asgardian,
+        comic:Atlantean,
+        comic:Cyborg,
+        comic:Deity,
+        comic:Demon,
+        comic:Duckworldian,
+        comic:Eternal,
+        comic:Faltine_hybrid,
+        comic:Flora_Colossus,
+        comic:Human,
+        comic:Inhuman,
+        comic:Kakarantharaian,
+        comic:Korbinite,
+        comic:Lumphomoid,
+        comic:Mutant,
+        comic:Neyaphem,
+        comic:Robot,
+        comic:Sakaaran_Shadow_People,
+        comic:Skrull,
+        comic:Strontian,
+        comic:Symbiote,
+        comic:Vampire,
+        comic:Xandarian,
+        comic:Zen-Whoberian .
+
+comic:hasCharacters a owl:ObjectProperty ;
+    owl:inverseOf comic:appearsIn .
+
+comic:hasIssueNumber a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "issue number"@en ;
+    rdfs:comment "The issue number of the comic." ;
+    rdfs:domain comic:Comic ;
+    rdfs:range xsd:nonNegativeInteger .
+
+comic:speciesName a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "species name"@en ;
+    rdfs:comment "The name of the species." ;
+    rdfs:domain comic:Species ;
+    rdfs:range comic:Species .
+
+dbp:characterName a owl:DatatypeProperty .
+
+comic:Alien a comic:Species ;
+    rdfs:label "Alien"@en ;
+    comic:SpeciesName "Alien"^^xsd:string ;
+    rdfs:comment "A rescource describing the species Alien." .
+
+comic:Animal a comic:Species ;
+    rdfs:label "Animal"@en ;
+    comic:SpeciesName "Animal"^^xsd:string ;
+    rdfs:comment "A rescource describing the species Animal." .
+
+comic:Arthrosian a comic:Species ;
+    rdfs:label "Arthrosian"@en ;
+    comic:SpeciesName "Arthrosian"^^xsd:string ;
+    rdfs:comment "A rescource describing the species Arthrosian." .
+
+comic:Asgardian a comic:Species ;
+    rdfs:label "Asgardian"@en ;
+    comic:SpeciesName "Asgardian"^^xsd:string ;
+    rdfs:comment "A rescource describing the species Asgardian." .
+
+comic:Atlantean a comic:Species ;
+    rdfs:label "Atlantean"@en ;
+    comic:SpeciesName "Atlantean"^^xsd:string ;
+    rdfs:comment "A rescource describing the species Atlantean." .
+
+comic:Cyborg a comic:Species ;
+    rdfs:label "Cyborg"@en ;
+    comic:SpeciesName "Cyborg"^^xsd:string ;
+    rdfs:comment "A rescource describing the species Cyborg." .
+
+comic:Deity a comic:Species ;
+    rdfs:label "Deity"@en ;
+    comic:SpeciesName "Deity"^^xsd:string ;
+    rdfs:comment "A rescource describing the species Deity." .
+
+comic:Demon a comic:Species ;
+    rdfs:label "Demon"@en ;
+    comic:SpeciesName "Demon"^^xsd:string ;
+    rdfs:comment "A rescource describing the species Demon." .
+
+comic:Duckworldian a comic:Species ;
+    rdfs:label "Duckworldian"@en ;
+    comic:SpeciesName "Duckworldian"^^xsd:string ;
+    rdfs:comment "A rescource describing the species Duckworldian." .
+
+comic:Eternal a comic:Species ;
+    rdfs:label "Eternal"@en ;
+    comic:SpeciesName "Eternal"^^xsd:string ;
+    rdfs:comment "A rescource describing the species Eternal." .
+
+comic:Faltine_hybrid a comic:Species ;
+    rdfs:label "Faltine hybrid"@en ;
+    comic:SpeciesName "Faltine hybrid"^^xsd:string ;
+    rdfs:comment "A rescource describing the species Faltine hybrid." .
+
+comic:Flora_Colossus a comic:Species ;
+    rdfs:label "Flora Colossus"@en ;
+    comic:SpeciesName "Flora Colossus"^^xsd:string ;
+    rdfs:comment "A rescource describing the species Flora Colossus." .
+
+comic:Human a comic:Species ;
+    rdfs:label "Human"@en ;
+    comic:SpeciesName "Human"^^xsd:string ;
+    rdfs:comment "A rescource describing the species Human." .
+
+comic:Inhuman a comic:Species ;
+    rdfs:label "Inhuman"@en ;
+    comic:SpeciesName "Inhuman"^^xsd:string ;
+    rdfs:comment "A rescource describing the species Inhuman." .
+
+comic:Kakarantharaian a comic:Species ;
+    rdfs:label "Kakarantharaian"@en ;
+    comic:SpeciesName "Kakarantharaian"^^xsd:string ;
+    rdfs:comment "A rescource describing the species Kakarantharaian." .
+
+comic:Korbinite a comic:Species ;
+    rdfs:label "Korbinite"@en ;
+    comic:SpeciesName "Korbinite"^^xsd:string ;
+    rdfs:comment "A rescource describing the species Korbinite." .
+
+comic:Lumphomoid a comic:Species ;
+    rdfs:label "Lumphomoid"@en ;
+    comic:SpeciesName "Lumphomoid"^^xsd:string ;
+    rdfs:comment "A rescource describing the species Lumphomoid." .
+
+comic:Mutant a comic:Species ;
+    rdfs:label "Mutant"@en ;
+    comic:SpeciesName "Mutant"^^xsd:string ;
+    rdfs:comment "A rescource describing the species Mutant." .
+
+comic:Neyaphem a comic:Species ;
+    rdfs:label "Neyaphem"@en ;
+    comic:SpeciesName "Neyaphem"^^xsd:string ;
+    rdfs:comment "A rescource describing the species Neyaphem." .
+
+comic:Robot a comic:Species ;
+    rdfs:label "Robot"@en ;
+    comic:SpeciesName "Robot"^^xsd:string ;
+    rdfs:comment "A rescource describing the species Robot." .
+
+comic:Sakaaran_Shadow_People a comic:Species ;
+    rdfs:label "Sakaaran Shadow People"@en ;
+    comic:SpeciesName "Sakaaran Shadow People"^^xsd:string ;
+    rdfs:comment "A rescource describing the species Sakaaran Shadow People." .
+
+comic:Skrull a comic:Species ;
+    rdfs:label "Skrull"@en ;
+    comic:SpeciesName "Skrull"^^xsd:string ;
+    rdfs:comment "A rescource describing the species Skrull." .
+
+comic:Strontian a comic:Species ;
+    rdfs:label "Strontian"@en ;
+    comic:SpeciesName "Strontian"^^xsd:string ;
+    rdfs:comment "A rescource describing the species Strontian." .
+
+comic:Symbiote a comic:Species ;
+    rdfs:label "Symbiote"@en ;
+    comic:SpeciesName "Symbiote"^^xsd:string ;
+    rdfs:comment "A rescource describing the species Symbiote." .
+
+comic:Vampire a comic:Species ;
+    rdfs:label "Vampire"@en ;
+    comic:SpeciesName "Vampire"^^xsd:string ;
+    rdfs:comment "A rescource describing the species Vampire." .
+
+comic:Xandarian a comic:Species ;
+    rdfs:label "Xandarian"@en ;
+    comic:SpeciesName "Xandarian"^^xsd:string ;
+    rdfs:comment "A rescource describing the species Xandarian." .
+
+comic:Zen-Whoberian a comic:Species ;
+    rdfs:label "Zen-Whoberian"@en ;
+    comic:SpeciesName "Zen-Whoberian"^^xsd:string ;
+    rdfs:comment "A rescource describing the species Zen-Whoberian." .
+
+comic:appearsIn a owl:ObjectProperty ;
+    rdfs:label "appears in"@en ;
+    rdfs:comment "The comics the character appears in." ;
+    rdfs:domain comic:Character ;
+    rdfs:range comic:Comic .
+
+comic:hasAlignment a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "alignment"@en ;
+    rdfs:comment "The alignment of the character." ;
+    rdfs:domain comic:Character ;
+    rdfs:range xsd:string .
+
+comic:hasCharacterID a owl:DatatypeProperty,
+        owl:FunctionalProperty,
+        owl:InverseFunctionalProperty ;
+    rdfs:label "character ID"@en ;
+    rdfs:comment "The ID of the character." ;
+    rdfs:domain comic:Character ;
+    rdfs:range xsd:nonNegativeInteger .
+
+comic:hasComicID a owl:DatatypeProperty,
+        owl:FunctionalProperty,
+        owl:InverseFunctionalProperty ;
+    rdfs:label "comic ID"@en ;
+    rdfs:comment "The ID of the comic." ;
+    rdfs:domain comic:Comic ;
+    rdfs:range xsd:nonNegativeInteger .
+
+comic:hasDescription a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "description"@en ;
+    rdfs:comment "The description of the character." ;
+    rdfs:domain comic:Comic ;
+    rdfs:range xsd:string .
+
+comic:hasEyeColor a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "eye color"@en ;
+    rdfs:comment "The eye color of the character." ;
+    rdfs:domain comic:Character ;
+    rdfs:range xsd:string .
+
+comic:hasFormerlyDeceased a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "formely deceased"@en ;
+    rdfs:comment "If character was formely deceased." ;
+    rdfs:domain comic:Character ;
+    rdfs:range xsd:string .
+
+comic:hasGender a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "gender"@en ;
+    rdfs:comment "The gender of the character." ;
+    rdfs:domain comic:Character ;
+    rdfs:range xsd:string .
+
+comic:hasHairColor a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "hair color"@en ;
+    rdfs:comment "The hair color of the character." ;
+    rdfs:domain comic:Character ;
+    rdfs:range xsd:string .
+
+comic:hasHeight a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "height"@en ;
+    rdfs:comment "The height of the character in cm." ;
+    rdfs:domain comic:Character ;
+    rdfs:range xsd:nonNegativeInteger .
+
+comic:hasLivingStatus a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "living status"@en ;
+    rdfs:comment "The living status of the character." ;
+    rdfs:domain comic:Character ;
+    rdfs:range xsd:string .
+
+comic:hasPublisher a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "has publisher"@en ;
+    rdfs:comment "The publisher of the comic." ;
+    rdfs:domain comic:Comic ;
+    rdfs:range comic:Publisher .
+
+comic:hasSpecies a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "species"@en ;
+    rdfs:comment "The species of the character." ;
+    rdfs:domain comic:Character ;
+    rdfs:range comic:Species .
+
+comic:hasTitle a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "comic title"@en ;
+    rdfs:comment "The title of the comic." ;
+    rdfs:domain comic:Comic ;
+    rdfs:range xsd:string .
+
+comic:hasWeight a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "weight"@en ;
+    rdfs:comment "The weight of the character in kg." ;
+    rdfs:domain comic:Character ;
+    rdfs:range xsd:nonNegativeInteger .
+
+comic:publisherName a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "publisher name"@en ;
+    rdfs:comment "The name of the publisher." ;
+    rdfs:domain comic:Species ;
+    rdfs:range comic:Publisher .
+
+comic:Publisher a owl:Class ;
+    rdfs:label "Publisher"@en ;
+    rdfs:comment "A class defining the publisher." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:string ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty comic:publisherName ] .
+
+comic:Comic a owl:Class ;
+    rdfs:label "Comic"@en ;
+    rdfs:comment "A class defining the comics." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty comic:hasTitle ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:nonNegativeInteger ;
+            owl:onProperty comic:issueNumber ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:nonNegativeInteger ;
+            owl:onProperty comic:hasComicID ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:string ;
+            owl:onDataRange comic:Publisher ;
+            owl:onProperty comic:hasPublisher ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:string ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty comic:hasDescription ],
+        dbo:Comic .
+
+comic:Character a owl:Class ;
+    rdfs:label "Character"@en ;
+    rdfs:comment "A class defining the character." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:string ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty comic:hasHairColor ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:nonNegativeInteger ;
+            owl:onProperty comic:hasHeight ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:string ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty comic:hasFormerlyDeceased ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:string ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty comic:hasAlignment ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:string ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty comic:hasEyeColor ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:string ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty comic:hasGender ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:nonNegativeInteger ;
+            owl:onProperty comic:hasCharacterID ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:string ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty comic:hasLivingStatus ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:nonNegativeInteger ;
+            owl:onProperty comic:hasWeight ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:string ;
+            owl:onDataRange comic:Species ;
+            owl:onProperty comic:hasSpecies ],
+        dbo:ComicsCharacter .
+
+comic:Species a owl:Class ;
+    rdfs:label "Species"@en ;
+    rdfs:comment "A class defining the species of the character." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:string ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty comic:SpeciesName ] .
+

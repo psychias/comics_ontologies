@@ -1,0 +1,283 @@
+@prefix comic: <http://comicCharacters.com/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dbp: <http://dbpedia.org/property/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+
+
+
+
+comic:CharacterShape a sh:NodeShape ;
+    sh:targetClass comic:Character ;
+    sh:property
+    [
+        sh:path comic:hasAlignment ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:datatype xsd:integer ;
+        sh:severity sh:Warning;
+        sh:message "Exactly one alignment should be given!"@en;
+    ],
+    [
+        sh:path comic:hasEyeColor ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:datatype xsd:string;sh:severity sh:Warning;
+        sh:message "Exactly one eye color should be given!"@en;
+    ],
+    [
+        sh:path comic:hasGender ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:datatype xsd:string ;
+        sh:severity sh:Warning;
+        sh:message "Exactly one gender should be given!"@en;
+    ],
+    [
+        sh:path comic:hasHairColor ;
+        sh:minLength 3 ;
+        sh:maxLength 10 ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:datatype xsd:string ;
+        sh:severity sh:Warning;
+        sh:message "Exactly one hair color should be given!"@en;
+    ],
+    [
+        sh:path comic:hasHeight ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:datatype xsd:integer ;
+        sh:severity sh:Warning;
+        sh:message "Exactly one height should be given!"@en;
+    ],
+        [
+        sh:path comic:hasWeight ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:datatype xsd:integer ;
+        sh:severity sh:Warning;
+        sh:message "Exactly one weight should be given!"@en;
+    ],
+    [
+        sh:path comic:hasSpecies ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:datatype xsd:string;
+        sh:severity sh:Warning;
+        sh:message "Exactly one species should be given!"@en ;
+    ],
+    [
+        sh:path comic:characterName ;
+        sh:minLength 3 ;
+        sh:maxLength 50 ;
+        sh:minCount 1;
+        sh:datatype xsd:string ;
+        sh:severity sh:Warning;
+        sh:message "At least one character name should be given!"@en ;
+    ],
+    [
+        sh:path comic:hasCharacterID ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:datatype xsd:integer;
+        sh:severity sh:Warning;
+        sh:message "Exactly one character ID should be given!"@en ;
+    ],
+    [
+        sh:path comic:hasLivingStatus ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ; 
+        sh:severity sh:Warning ;
+        sh:message "Exactly one living status should be given!"@en ;
+    ],
+    [sh:path comic:FormerlyDeceased ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:datatype xsd:string ;
+        sh:severity sh:Warning ;
+        sh:message "Give the info if character was formely deceased!"@en;
+    [
+        sh:path comic:appearsIn ;
+        sh:minCount 1 ;
+        sh:class comic:Comic ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Warning ;
+        sh:message "At least one comic of appearance should be given!"@en;
+    ] .
+
+
+
+
+
+comic:ComicShape a sh:NodeShape ;
+    sh:targetClass comic:Character ;
+    sh:property
+    [
+        sh:path comic:hasAlignment ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:severity sh:Warning ;
+        sh:message "Exactly one alignment should be given!"@en ;
+    ],
+    [
+        sh:path comic:hasEyeColor ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:datatype xsd:string ; 
+        sh:severity sh:Warning ;
+        sh:message "Exactly one eye color should be given!"@en ;
+    ],
+    [
+        sh:path comic:hasGender ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:datatype xsd:string ;
+        sh:severity sh:Warning ;
+        sh:message "Exactly one gender should be given!"@en ;
+    ],
+    [
+        sh:path comic:hasHairColor ;
+        sh:minLength 3 ;
+        sh:maxLength 10 ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:datatype xsd:string ;
+        sh:severity sh:Warning ;
+        sh:message "Exactly one hair color should be given!"@en ;
+    ],
+    [
+        sh:path comic:hasHeight ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:datatype xsd:integer ;
+        sh:severity sh:Warning;
+        sh:message "Exactly one height should be given!"@en ;
+    ],
+        [
+        sh:path comic:hasWeight ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:datatype xsd:integer ;
+        sh:severity sh:Warning;
+        sh:message "Exactly one weight should be given!"@en ;
+    ],
+    [
+        sh:path comic:hasSpecies ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:datatype xsd:string;
+        sh:severity sh:Warning;
+        sh:message "Exactly one species should be given!"@en ;
+    ],
+    [
+        sh:path comic:characterName ;
+        sh:minLength 3 ;
+        sh:maxLength 50 ;
+        sh:minCount 1;
+        sh:datatype xsd:string ;
+        sh:severity sh:Warning;
+        sh:message "At least one character name should be given!"@en ;
+    ],
+    [
+        sh:path comic:hasCharacterID ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:datatype xsd:integer;
+        sh:severity sh:Warning;
+        sh:message "Exactly one character ID should be given!"@en ;
+    ],
+    [
+        sh:path comic:hasLivingStatus ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:datatype xsd:string;
+        sh:severity sh:Warning;
+        sh:message "Exactly one living status should be given!"@en ;
+    ],
+    [sh:path comic:FormerlyDeceased ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:datatype xsd:string;
+        sh:severity sh:Warning;
+        sh:message "Give the info if character was formely deceased!"@en ;
+        ],
+    [
+        sh:path comic:appearsIn ;
+        sh:minCount 1;
+        sh:class comic:Comic;
+        sh:datatype xsd:string ;
+        sh:severity sh:Warning;
+        sh:message "At least one comic of appearance should be given!"@en ;
+    ] .
+
+
+comic:ComicShape a sh:NodeShape ;
+    sh:targetClass comic:Comic ;
+    sh:property
+    [
+        sh:path comic:hasDescription ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:class comic:Comic ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Warning;
+        sh:message "Exactly one description should be given!"@en;
+        sh:languageIn ("en") ;
+    ],
+    [
+        sh:path comic:hasPublisher ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:hasValue comic:MarvelComics ;
+        sh:severity sh:Warning;
+        sh:message "Exactly one publisher should be given!"@en;
+    ],
+    [        
+        sh:path comic:hasComicID ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:class comic:Comic;
+        sh:datatype xsd:integer ;
+        sh:severity sh:Warning;
+        sh:message "Exactly one comic ID should be given!"@en;
+    ],
+    [
+        sh:path comic:hasTitle ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:class comic:Comic ;
+        sh:datatype xsd:string ;
+        sh:severity sh:Warning;
+        sh:message "Exactly one title should be given!"@en;
+        sh:pattern "\#$";
+    ],
+    [ 
+        sh:path comic:issueNumber ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:class comic:Comic ;
+        sh:datatype xsd:integer ;
+        sh:severity sh:Warning;
+        sh:message "Exactly one issue number should be given!"@en;
+    ].
+
+
+
+comic:PublisherShape a sh:NodeShape ;
+    sh:targetClass comic:Publisher;
+    sh:property
+    [
+        sh:path comic:publisherName ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:hasValue comic:MarvelComics;
+        sh:datatype xsd:string ;
+        sh:severity sh:Warning;
+        sh:message "Publisher name has to be Marvel Comic!"@en;
+    ].

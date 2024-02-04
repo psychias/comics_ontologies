@@ -1,0 +1,67 @@
+@prefix comic: <http://comicCharacters.com/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+comic:Species a owl:Class ;
+    rdfs:label "Species"@en ;
+    rdfs:comment "A class defining the species of the character." .
+
+comic:appearsIn a owl:ObjectProperty ;
+    rdfs:domain comic:Character ;
+    rdfs:range comic:Comic .
+
+comic:hasAlignment a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain comic:Character ;
+    rdfs:range xsd:string .
+
+comic:hasCharacters a owl:ObjectProperty ;
+    rdfs:domain comic:Comic ;
+    rdfs:range comic:Character .
+
+comic:hasEyeColor a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain comic:Character ;
+    rdfs:range xsd:string .
+
+comic:hasGender a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain comic:Character ;
+    rdfs:range xsd:string .
+
+comic:hasHairColor a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain comic:Character ;
+    rdfs:range xsd:string .
+
+comic:hasHeight a owl:DatatypeProperty ;
+    rdfs:domain comic:Character ;
+    rdfs:range xsd:decimal .
+
+comic:hasName a owl:DatatypeProperty ;
+    rdfs:domain comic:Character ;
+    rdfs:range xsd:string .
+
+comic:hasPublisher a owl:ObjectProperty ;
+    rdfs:domain comic:Comic ;
+    rdfs:range comic:Publisher .
+
+comic:hasWeight a owl:DatatypeProperty ;
+    rdfs:domain comic:Character ;
+    rdfs:range xsd:decimal .
+
+comic:Publisher a owl:Class ;
+    rdfs:label "Publisher"@en ;
+    rdfs:comment "A class defining the publisher." .
+
+comic:Comic a owl:Class ;
+    rdfs:label "Comic"@en ;
+    rdfs:comment "A class defining the comics." ;
+    rdfs:subClassOf rdfs:Class .
+
+comic:Character a owl:Class ;
+    rdfs:label "Character"@en ;
+    rdfs:comment "A class defining the character." ;
+    rdfs:subClassOf rdfs:Class .
+

@@ -1,0 +1,217 @@
+@prefix comic: <http://comicCharacters.com/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dbp: <http://dbpedia.org/property/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+comic:hasCharacters a owl:ObjectProperty ;
+    owl:inverseOf comic:appearsIn .
+
+comic:hasIssueNumber a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "issue number"@en ;
+    rdfs:comment "The issue number of the comic." ;
+    rdfs:domain comic:Comic ;
+    rdfs:range xsd:nonNegativeInteger .
+
+comic:speciesName a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "species name"@en ;
+    rdfs:comment "The name of the species." ;
+    rdfs:domain comic:Species ;
+    rdfs:range comic:Species .
+
+dbp:characterName a owl:DatatypeProperty .
+
+comic:appearsIn a owl:ObjectProperty ;
+    rdfs:label "appears in"@en ;
+    rdfs:comment "The comics the character appears in." ;
+    rdfs:domain comic:Character ;
+    rdfs:range comic:Comic .
+
+comic:hasAlignment a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "alignment"@en ;
+    rdfs:comment "The alignment of the character." ;
+    rdfs:domain comic:Character ;
+    rdfs:range xsd:string .
+
+comic:hasCharacterID a owl:DatatypeProperty,
+        owl:FunctionalProperty,
+        owl:InverseFunctionalProperty ;
+    rdfs:label "character ID"@en ;
+    rdfs:comment "The ID of the character." ;
+    rdfs:domain comic:Character ;
+    rdfs:range xsd:nonNegativeInteger .
+
+comic:hasComicID a owl:DatatypeProperty,
+        owl:FunctionalProperty,
+        owl:InverseFunctionalProperty ;
+    rdfs:label "comic ID"@en ;
+    rdfs:comment "The ID of the comic." ;
+    rdfs:domain comic:Comic ;
+    rdfs:range xsd:nonNegativeInteger .
+
+comic:hasDescription a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "description"@en ;
+    rdfs:comment "The description of the character." ;
+    rdfs:domain comic:Comic ;
+    rdfs:range xsd:string .
+
+comic:hasEyeColor a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "eye color"@en ;
+    rdfs:comment "The eye color of the character." ;
+    rdfs:domain comic:Character ;
+    rdfs:range xsd:string .
+
+comic:hasFormerlyDeceased a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "formely deceased"@en ;
+    rdfs:comment "If character was formely deceased." ;
+    rdfs:domain comic:Character ;
+    rdfs:range xsd:string .
+
+comic:hasGender a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "gender"@en ;
+    rdfs:comment "The gender of the character." ;
+    rdfs:domain comic:Character ;
+    rdfs:range xsd:string .
+
+comic:hasHairColor a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "hair color"@en ;
+    rdfs:comment "The hair color of the character." ;
+    rdfs:domain comic:Character ;
+    rdfs:range xsd:string .
+
+comic:hasHeight a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "height"@en ;
+    rdfs:comment "The height of the character in cm." ;
+    rdfs:domain comic:Character ;
+    rdfs:range xsd:nonNegativeInteger .
+
+comic:hasLivingStatus a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "living status"@en ;
+    rdfs:comment "The living status of the character." ;
+    rdfs:domain comic:Character ;
+    rdfs:range xsd:string .
+
+comic:hasPublisher a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "has publisher"@en ;
+    rdfs:comment "The publisher of the comic." ;
+    rdfs:domain comic:Comic ;
+    rdfs:range comic:Publisher .
+
+comic:hasSpecies a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "species"@en ;
+    rdfs:comment "The species of the character." ;
+    rdfs:domain comic:Character ;
+    rdfs:range comic:Species .
+
+comic:hasTitle a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "comic title"@en ;
+    rdfs:comment "The title of the comic." ;
+    rdfs:domain comic:Comic ;
+    rdfs:range xsd:string .
+
+comic:hasWeight a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "weight"@en ;
+    rdfs:comment "The weight of the character in kg." ;
+    rdfs:domain comic:Character ;
+    rdfs:range xsd:nonNegativeInteger .
+
+comic:publisherName a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "publisher name"@en ;
+    rdfs:comment "The name of the publisher." ;
+    rdfs:domain comic:Species ;
+    rdfs:range comic:Publisher .
+
+comic:Publisher a owl:Class ;
+    rdfs:label "Publisher"@en ;
+    rdfs:comment "A class defining the publisher." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:string ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty comic:publisherName ] .
+
+comic:Species a owl:Class ;
+    rdfs:label "Species"@en ;
+    rdfs:comment "A class defining the species of the character." .
+
+comic:Comic a owl:Class ;
+    rdfs:label "Comic"@en ;
+    rdfs:comment "A class defining the comics." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:string ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty comic:hasTitle ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:nonNegativeInteger ;
+            owl:onProperty comic:hasComicID ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:string ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty comic:hasPublisher ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:string ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty comic:hasDescription ],
+        dbo:Comic .
+
+comic:Character a owl:Class ;
+    rdfs:label "Character"@en ;
+    rdfs:comment "A class defining the character." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:nonNegativeInteger ;
+            owl:onProperty comic:hasCharacterID ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:string ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty comic:hasLivingStatus ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:nonNegativeInteger ;
+            owl:onProperty comic:hasHeight ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:string ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty comic:hasAlignment ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:string ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty comic:hasFormerlyDeceased ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:string ;
+            owl:onDataRange comic:Species ;
+            owl:onProperty comic:hasSpecies ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:string ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty comic:hasEyeColor ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:string ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty comic:hasHairColor ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:string ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty comic:hasGender ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:nonNegativeInteger ;
+            owl:onProperty comic:hasWeight ],
+        dbo:ComicsCharacter .
+
